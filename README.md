@@ -3,8 +3,9 @@
 
 
 ## Why this Folder Structure?
-I recommend following this folder/file structure for any addon, no matter how small.
-This makes expanding the addon or merging functionality together much easier.
+I recommend following this folder/file structure for any addon, no matter how small. <br />
+This makes expanding the addon or merging functionality together much easier. <br />
+In case you want more details, I can't recommend ST3's addon development course enough. https://blendermarket.com/products/st3-blender-addon-course <br />
 ![image](https://user-images.githubusercontent.com/83173898/206546173-c75cb390-a48f-443c-a092-10ed5229f48e.png)
 
 
