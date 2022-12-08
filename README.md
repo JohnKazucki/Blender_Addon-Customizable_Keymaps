@@ -1,6 +1,11 @@
 # Blender_Addon-Customizable_Keymaps
  A minimal example on how to have customizable keymaps in the preferences of your Blender addon
 
+A quick guide to how the registration/structure of this addon works. I recommend following this folder/file structure for any addon, no matter how small.
+This makes expanding the addon or merging functionality together much easier.
+![image](https://user-images.githubusercontent.com/83173898/206545009-990086b7-a316-478d-ae63-c7fb823e3343.png)
+
+
 
 ## CREDITS/THANKS
 
