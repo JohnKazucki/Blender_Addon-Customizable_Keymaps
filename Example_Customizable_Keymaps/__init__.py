@@ -23,7 +23,19 @@ bl_info = {
     "category" : ""
 }
 
+
+def register():
+    from .addon.register import register_addon
+    register_addon()
+
+def unregister():
+    from .addon.register import unregister_addon
+    unregister_addon()
+
+
+
 # ------------------------------
+
 
 # CREDITS/THANKS
 
@@ -41,13 +53,11 @@ bl_info = {
 # for (among many things) helping figure out how to get customized keymaps to stay between restarts
 # Check out their site! https://proxe.io/
 
+# ST3 
+# For their wonderful BPY course for beginners
+# The folder structure of this addon is heavily based on their work, so be sure to check them out!
+# BPY Course: https://blendermarket.com/products/st3-blender-addon-course
+# Their Gumroad: https://st3.gumroad.com/
+
+
 # ------------------------------
-
-
-def register():
-    from .addon.register import register_addon
-    register_addon()
-
-def unregister():
-    from .addon.register import unregister_addon
-    unregister_addon()

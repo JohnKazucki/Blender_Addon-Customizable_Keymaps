@@ -47,6 +47,7 @@ class ECK_Props(bpy.types.AddonPreferences):
                 if kmi:
                     col.context_pointer_set("keymap", km)
                     # draw the keymap item in the Addon Preferences menu
+                    # Sadly there is no documentation for this module or function currently
                     rna_keymap_ui.draw_kmi([], kc, km, kmi, col, 0)
 
 
@@ -54,14 +55,12 @@ class ECK_Props(bpy.types.AddonPreferences):
 # see the AddonPreferences draw function for the context/use of this function
 def get_hotkey_entry_item(km, item):
     '''
-    returns hotkey of specific type, with specific properties.name (keymap is not a dict, so referencing by keys is not enough
+    returns hotkey of specific type, with specific operator name and  optionally properties.name (keymap is not a dict, so referencing by keys is not enough
     if there are multiple hotkeys!)
     '''
 
     kmi_name = item["operator"]
     
-
-
     for i, km_item in enumerate(km.keymap_items):
         if km.keymap_items.keys()[i] == kmi_name:
             if "prop_name" in item:

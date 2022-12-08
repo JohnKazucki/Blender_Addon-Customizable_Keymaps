@@ -3,8 +3,10 @@ import bpy
 
 # To better understand what values a keymap needs to work, check out this resource:
 # https://github.com/brybalicious/toggle_mmb_numpad/blob/master/keymap_implementation.md
-# It goes over all the possible Keymap Names, Region/Map/Space and Key Types, etc.
+# It goes over all the possible Keymap Names, Region/Map/Space/Key Types, Values, etc.
 
+# This implementation does not include the Region or Map Types
+# For most use cases they are not very relevant, so they have been deliberately omitted here
 
 keymaps =[
             # 3D View Keymaps
@@ -20,8 +22,8 @@ keymaps =[
                     # Calling a Pie Menu
                     {
                         "operator": "wm.call_menu_pie", # wm.call_menu_pie is a built in operator 
-                        "type": "C",
-                        "value": "PRESS",
+                        "type": "C", # Key Types, what mouse or keyboard button is pressed to call the operator
+                        "value": "PRESS", # Value, What type of button action must be performed to call this operator, usually PRESS is all that is needed
                         "prop_name": "ECK_MT_Pie_Menu", # pie menu that you want to call
 
                         # Modifier keys, pressed together with the key in "type"
