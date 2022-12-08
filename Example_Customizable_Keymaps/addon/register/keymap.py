@@ -1,11 +1,53 @@
 import bpy
 
 
+# To better understand what values a keymap needs to work, check out this resource:
+# https://github.com/brybalicious/toggle_mmb_numpad/blob/master/keymap_implementation.md
+# It goes over all the possible Keymap Names, Region/Map/Space and Key Types, etc.
+
+
 keymaps =[
             # 3D View Keymaps
             {
-                "name": "3D View",
-                "space_type": "VIEW_3D",
+                # Keymap name, this is one of 224 hardcoded strings from Blender
+                "name": "3D View", 
+                # Space Type, one of these https://docs.blender.org/api/current/bpy_types_enum_items/space_type_items.html#rna-enum-space-type-items
+                # This relates to the editor you wish to have the keymap work in. Such as the Node Editor or Console, etc.
+                "space_type": "VIEW_3D", 
+                # A list of KeyMap Items (kmi), each item being one shortcut
+                "items":
+                [
+                    # Calling a Pie Menu
+                    {
+                        "operator": "wm.call_menu_pie", # wm.call_menu_pie is a built in operator 
+                        "type": "C",
+                        "value": "PRESS",
+                        "prop_name": "ECK_MT_Pie_Menu", # pie menu that you want to call
+
+                        # Modifier keys, pressed together with the key in "type"
+                        "shift": False,
+                        "ctrl": False,
+                        "alt": True,
+                        "oskey": False,
+                    },
+                    # Calling a regular Operator
+                    {
+                        "operator": "object.eck_simpleoperator", 
+                        "type": "D",
+                        "value": "PRESS",
+                        # prop_name is not applicable for regular operators
+                        # "prop_name": "", 
+                        "shift": False,
+                        "ctrl": False,
+                        "alt": False,
+                        "oskey": False,
+                    },
+                ]
+            },
+            # UV Editor Keymaps
+            {
+                "name": "UV Editor",
+                "space_type": "EMPTY",
                 "items":
                 [
                     # Calling a Pie Menu
@@ -21,7 +63,7 @@ keymaps =[
                     },
                     # Calling a regular Operator
                     {
-                        "operator": "object.eck_simpleoperator", #wm.call_menu_pie is a built in operator 
+                        "operator": "object.eck_simpleoperator", 
                         "type": "D",
                         "value": "PRESS",
                         # prop_name is not applicable for regular operators
@@ -32,31 +74,12 @@ keymaps =[
                         "oskey": False,
                     },
                 ]
-            },
-            # UV Editor Keymaps
-            # {
-            #     "name": "UV Editor",
-            #     "space_type": "EMPTY",
-            #     "items":
-            #     [
-            #         {
-            #             "operator": "wm.call_menu_pie",
-            #             "type": "D",
-            #             "value": "PRESS",
-            #             "prop_name": "ECK_MT_Bevel_Menu",
-            #             "shift": False,
-            #             "ctrl": False,
-            #             "alt": False,
-            #             "oskey": False,
-            #         },
-            #     ]
-            # },            
+            },            
         ]
 
 
-
+# to keep track of the custom keymaps this addon adds to Blender. These will be removed again when we unregister/disable the addon
 keys = []
-
 
 
 

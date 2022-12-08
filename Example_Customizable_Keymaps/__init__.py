@@ -18,11 +18,30 @@ bl_info = {
     "description" : "Various Tools and Menus",
     "blender" : (3, 4, 0),
     "version" : (0, 1, 0),
-    "location" : "View3D/UV editor > Alt+C",
+    "location" : "View3D/UV editor > Alt+C and D",
     "warning" : "",
-    "category" : "Mesh"
+    "category" : ""
 }
 
+# ------------------------------
+
+# CREDITS/THANKS
+
+# Kilbee 
+# for their keymap preferences drawing method found here: 
+# https://blenderartists.org/t/keymap-for-addons/685544/6
+# https://github.com/kilbee/kbPIEs/blob/e7070e591d157aabfeb554366c317c1cf121b4bf/kbPIEs.py#L36
+# This repository/addon is a slightly more refined and cut down version of their method
+
+# brybalicious
+# for their in depth reference on Keymap Names, Region/Map/Space and Key Types, etc.
+# Check out their Github! https://github.com/brybalicious
+
+# Proxe
+# for (among many things) helping figure out how to get customized keymaps to stay between restarts
+# Check out their site! https://proxe.io/
+
+# ------------------------------
 
 
 def register():
@@ -32,4 +51,3 @@ def register():
 def unregister():
     from .addon.register import unregister_addon
     unregister_addon()
-
