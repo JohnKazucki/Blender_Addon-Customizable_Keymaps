@@ -3,7 +3,7 @@
 
 A quick guide to how the registration/structure of this addon works. I recommend following this folder/file structure for any addon, no matter how small.
 This makes expanding the addon or merging functionality together much easier.
-![image](https://user-images.githubusercontent.com/83173898/206545009-990086b7-a316-478d-ae63-c7fb823e3343.png)
+![image](https://user-images.githubusercontent.com/83173898/206546173-c75cb390-a48f-443c-a092-10ed5229f48e.png)
 
 
 
